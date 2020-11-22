@@ -1,0 +1,33 @@
+.l-header {
+  background-color: #F2F2E7; }
+
+.c-meta__item--author {
+  display: none; }
+
+.c-widget.widget_snow_monkey_recent_posts_widget .c-entry-summary__content {
+  display: none; }
+
+.top-section-introduce__person .smb-media-text__figure img {
+  border-radius: 50%; }
+
+.c-site-branding__description {
+  display: none; }
+  @media screen and (min-width: 640px) {
+    .c-site-branding__description {
+      display: block;
+      margin-top: 10px;
+      color: var(--accent-color, #cd162c); } }
+
+/* Move to Youtube
+------------------------------*/
+.p-move-to-youtube {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #DA1725; }
+
+/* Top new lesson list
+------------------------------*/
+.top-new-lesson-list .snow-monkey-recent-posts .c-meta__item--published {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */

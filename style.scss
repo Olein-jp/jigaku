@@ -1,0 +1,79 @@
+//======================================================================
+// Media Query
+//======================================================================
+//-----------------------------------------------------
+// Minimal width
+//-----------------------------------------------------
+$breakpoint-up: (
+        'md' : 'screen and (min-width: 640px)',
+        'lg' : 'screen and (min-width: 1024px)',
+        'xl' : 'screen and (min-width: 1280px)',
+) !default;
+
+
+//-----------------------------------------------------
+// Max width
+//-----------------------------------------------------
+$breakpoint-down: (
+        'sm' : 'screen and (max-width: 639px)',
+        'md' : 'screen and (max-width: 1023px)',
+        'lg' : 'screen and (max-width: 1279px)',
+) !default;
+
+//-----------------------------------------------------
+// Set Mixin
+//-----------------------------------------------------
+@mixin media-breakpoint-up($breakpoint: sm) {
+  @media #{map-get($breakpoint-up, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint: lg) {
+  @media #{map-get($breakpoint-down, $breakpoint)} {
+    @content;
+  }
+}
+
+.l-header {
+  background-color: #F2F2E7;
+}
+
+.c-meta__item--author {
+  display: none;
+}
+
+.c-widget.widget_snow_monkey_recent_posts_widget .c-entry-summary__content {
+  display: none;
+}
+
+.top-section-introduce__person .smb-media-text__figure img {
+  border-radius: 50%;
+}
+
+.c-site-branding__description {
+  display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+    margin-top: 10px;
+    color: var( --accent-color, #cd162c );
+  }
+}
+
+/* Move to Youtube
+------------------------------*/
+.p-move-to-youtube {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #DA1725;
+}
+
+/* Top new lesson list
+------------------------------*/
+.top-new-lesson-list {
+  .snow-monkey-recent-posts {
+    .c-meta__item--published {
+      display: none;
+    }
+  }
+}
