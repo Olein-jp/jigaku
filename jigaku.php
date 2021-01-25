@@ -60,3 +60,22 @@ add_action(
 		<?php }
 	}
 );
+
+/**
+ * カテゴリー一覧ページの表示記事数を変更
+ */
+add_action(
+	'pre_get_posts',
+	function( $query ) {
+		if ( is_admin() || ! $query->is_main_query() ) {
+			return;
+		}
+
+		if ( $query->is_category() ) {
+			$query->set( 'posts_per_page', '-1' );
+			$query->set( 'order', 'ADC' );
+			$query->set( 'orderby', 'post_name__in' );
+			return;
+		}
+	}
+);
