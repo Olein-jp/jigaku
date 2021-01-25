@@ -46,15 +46,17 @@ add_action(
  * WordPressテーマ制作レッスンのエントリー下部にYoutubeプレイリストへのボタン設置
  */
 add_action(
-	'snow_monkey_after_entry_content',
+	'snow_monkey_append_entry_content',
 	function() {
 		if ( in_category( 'wp-theme-dev-lesson') ) {
 		?>
 		<a class="c-btn c-btn--block p-move-to-youtube" href="https://www.youtube.com/playlist?list=PLhydLf-S4Z5H5oQSqrEgCDDHMMul6KUF9" target="_blank">
 			<i class="fab fa-youtube"></i> このレッスンの関連動画一覧を見る
 		</a>
+		<?php } elseif ( in_category( 'wp-basic' ) ) { ?>
+		<a class="c-btn c-btn--block p-move-to-youtube" href="https://www.youtube.com/watch?v=Fy29rdJHxhU&list=PLhydLf-S4Z5HHIQruAC49xC9GIjPUZalb" target="_blank">
+			<i class="fab fa-youtube"></i> このレッスンの関連動画一覧を見る
+		</a>
 		<?php }
-	},
-	1,
-	1
+	}
 );
